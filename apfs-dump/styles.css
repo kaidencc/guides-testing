@@ -1,0 +1,29 @@
+/* Force dark mode */
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+}
+
+a {
+    color: #9a86fd; /* Softer link color */
+}
+
+code {
+    background-color: #1e1e1e; /* Slightly lighter dark background for code */
+    color: #dcdcdc; /* Softer text color for code */
+    padding: 2px 6px; /* Add some padding */
+    border-radius: 3px; /* Rounded corners */
+}
+
+pre {
+    background-color: #1e1e1e; /* Slightly lighter dark background for code blocks */
+    color: #dcdcdc; /* Softer text color for code */
+    padding: 12px; /* Add padding to code blocks */
+    border-radius: 5px; /* Rounded corners */
+    overflow-x: auto; /* Allow horizontal scrolling for long lines */
+}
+
+pre code {
+    background-color: transparent; /* Remove double background when code is inside pre */
+    padding: 0; /* Remove padding when inside pre */
+}
