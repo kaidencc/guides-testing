@@ -1,2 +1,3 @@
-# Guide has been moved to new site
-Please visit https://kaiden.cc/posts/downgrading-the-iphone-5c-to-ios-6/
+# guides-testing
+The repository holds guides that are currently in testing stage.
+Once tested, they will be published to https://kaiden.cc/
