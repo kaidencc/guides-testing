@@ -14,7 +14,7 @@ I am **not** responsible for any damage to your devices caused by following this
 - **An iOS device** booted into SwitchBoard<br>
 - **gtar** (GNU tar) for creating stable tar archives<br>
 - **iproxy** and **usbmuxd** for SSH communication with the device<br>
-- **Sufficient disk space** for the dump files (at least 2x your device storage)<br>
+- **Sufficient disk space** for the dump files<br>
 
 ## Setting up SSH over USB
 
