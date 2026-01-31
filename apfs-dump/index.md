@@ -77,17 +77,10 @@ You must additionally dump the full filesystem as a tar archive (this is necessa
 
 ## Dumping disk1 and disk2
 
-Now dump disk1 and disk2 partitions<br>
+Finally, dump disk1 and disk2 partitions<br>
 `ssh root@localhost -p 2222 -o StrictHostKeyChecking=no 'dd if=/dev/disk1' | dd of=nand_firmware`<br>
 `ssh root@localhost -p 2222 -o StrictHostKeyChecking=no 'dd if=/dev/disk2' | dd of=nand_llb`<br>
 *Note: When asked for a password, enter "alpine" as the password*<br>
-
-## Get build train
-
-To get the build train (build name and number), fsck the system volume<br>
-`fsck_hfs -f /dev/disk0s1s1`<br>
-Once the command has completed, it should say *"The volume <build train> appears to be OK."*<br>
-Save the build train somewhere, it will be important if you want to rebuild the system as a disk image.<br>
 
 **Done!** You should now have all the necessary dump files in your dump folder.<br>
 
