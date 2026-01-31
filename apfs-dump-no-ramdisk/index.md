@@ -34,10 +34,11 @@ Leave that terminal also running in the background and open another new terminal
 Create a folder for the dump files<br>
 `mkdir dump && cd dump`<br>
 
-Download gtar and send it to the device (gtar is more stable than the standard BSD tar that comes with iOS)<br>
+Download gtar and send it to the device (gtar is more stable than the BSD tar that comes with iOS).<br>
 `curl -LO https://applintrnl.app/tools/dumping/gtar && chmod +x gtar`<br>
 `scp -P 2222 -o StrictHostKeyChecking=no gtar root@localhost:/var/mobile/gtar`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
+*Note: When asked for a password, enter "alpine"*<br>
+*Note: If you previously dumped with BSD tar, redump using gtar. BSD tar may cause [ownership issues](https://kaiden.cc/guides-testing/apfs-dump-no-ramdisk/ownership.png) like these.*<br>
 
 ## Dumping the filesystem
 
