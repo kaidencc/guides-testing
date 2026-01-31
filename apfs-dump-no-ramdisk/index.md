@@ -55,6 +55,14 @@ Dump disk2 (LLB)<br>
 `ssh root@localhost -p 2222 -o StrictHostKeyChecking=no 'dd if=/dev/disk2 bs=4096' | dd of=nand_llb`<br>
 *Note: When asked for a password, enter "alpine" as the password*<br>
 
+## Getting the build train
+
+To get the build train (build name and number), fsck the system volume<br>
+`fsck_hfs -f /dev/disk0s1s1`<br>
+
+Once the command has completed, it should say *"The volume <build train> appears to be OK."*<br>
+Save the build train somewhere, it will be important if you want to rebuild the system as a disk image.<br>
+
 **Done!** You should now have all the necessary dump files in your dump folder.<br>
 
 ## Contact
