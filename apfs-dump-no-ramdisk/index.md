@@ -39,46 +39,20 @@ Download gtar and send it to the device (gtar is more stable than the standard B
 `scp -P 2222 -o StrictHostKeyChecking=no gtar root@localhost:/var/mobile/gtar`<br>
 *Note: When asked for a password, enter "alpine" as the password*<br>
 
-## Dumping partitions and filesystems
+## Dumping the filesystem
 
 Dump the full filesystem (this will take some time)<br>
 `ssh root@localhost -p 2222 -o StrictHostKeyChecking=no '/var/mobile/gtar -cpzvf - /' > fs.tar.gz`<br>
 *Note: When asked for a password, enter "alpine" as the password*<br>
 
-Dump the system (excludes /private/ directory)<br>
-`ssh root@localhost -p 2222 -o StrictHostKeyChecking=no '/var/mobile/gtar -cpzvf --exclude=/private/* - /' > rootfs.tar.gz`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
-
-Dump etc<br>
-`ssh root@localhost -p 2222 -o StrictHostKeyChecking=no '/var/mobile/gtar -cpzvf - /private/etc' > etc.tar.gz`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
-
-Dump data<br>
-`ssh root@localhost -p 2222 -o StrictHostKeyChecking=no '/var/mobile/gtar -cpzvf - /private/var' > data.tar.gz`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
-
-Dump preboot<br>
-`ssh root@localhost -p 2222 -o StrictHostKeyChecking=no '/var/mobile/gtar -cpzvf - /private/preboot' > preboot.tar.gz`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
-
 ## Dumping firmware partitions
 
-Dump NOR (firmware partition)<br>
+Dump disk1 (NOR)<br>
 `ssh root@localhost -p 2222 -o StrictHostKeyChecking=no 'dd if=/dev/disk1 bs=4096' | dd of=nand_firmware`<br>
 *Note: When asked for a password, enter "alpine" as the password*<br>
 
-Dump LLB (Low-Level Bootloader)<br>
+Dump disk2 (LLB)<br>
 `ssh root@localhost -p 2222 -o StrictHostKeyChecking=no 'dd if=/dev/disk2 bs=4096' | dd of=nand_llb`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
-
-## Dumping system information
-
-Dump NVRAM (non-volatile RAM)<br>
-`ssh -p 2222 -o StrictHostKeyChecking=no root@localhost 'nvram -xp' > nvram-xp.txt`<br>
-*Note: When asked for a password, enter "alpine" as the password*<br>
-
-Get build train information<br>
-`ssh -p 2222 -o StrictHostKeyChecking=no root@localhost 'df -h' > df-h.txt`<br>
 *Note: When asked for a password, enter "alpine" as the password*<br>
 
 **Done!** You should now have all the necessary dump files in your dump folder.<br>
