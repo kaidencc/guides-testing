@@ -58,7 +58,7 @@ Dump disk2 (LLB)<br>
 ## Getting the build train
 
 To get the build train (build name and number), fsck the system volume<br>
-`fsck_hfs -f /dev/disk0s1s1`<br>
+`fsck_apfs -y /dev/disk0s1s1`<br>
 
 Once the command has completed, it should say `The volume <build train> appears to be OK.`<br>
 Save the build train somewhere, it will be important if you want to rebuild the system as a disk image.<br>
