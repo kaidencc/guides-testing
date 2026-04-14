@@ -1,0 +1,35 @@
+/* Force dark mode */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+a {
+    color: #9a86fd;
+}
+
+/* Inline code (single backticks) */
+code {
+    /* Made lighter (#333) so it stands out against the #121212 body */
+    background-color: #333333 !important;
+    color: #ffffff !important;
+
+    /* Adds spacing so the background color forms a visible box */
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+/* Code blocks (triple backticks) */
+pre {
+    background-color: #1e1e1e !important;
+    padding: 16px;
+    border-radius: 6px;
+    overflow: auto; /* Adds scrollbar if line is too long */
+}
+
+/* specific fix: prevents inline styles from double-applying inside blocks */
+pre code {
+    background-color: transparent !important;
+    padding: 0;
+    color: inherit;
+}
